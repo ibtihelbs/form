@@ -43,10 +43,14 @@
     
        <!-- Step 2 start -->
        <section id="plan" class="main">
-        <h1>Select your plan</h1>
-        <p>You have the option of monthly or yearly billing.</p>
+        <div class="title">
+          <h1>Select your plan</h1>
+          <p>You have the option of monthly or yearly billing.</p>
+        </div>
         <div>
-            <div>
+          <div>
+            <div id="plans">
+              <div>
                 <img src="./assets/images/icon-arcade.svg" alt="">
                 <h3>Arcade</h3>
                 <p>$9/mo</p>
@@ -61,15 +65,19 @@
                 <h3>Pro</h3>
                 <p>$15/mo</p>
             </div>
+            </div>
+            <div id="toggle">
+              Monthly
+              Yearly
+          </div>
         </div>
-        <div id="toggle">
-            Monthly
-            Yearly
+        <div id="steps">
+           <a href="index.html">Go Back</a>
+           <button>
+             Next Step
+           </button>
         </div>
-        <a href="index.html">Go Back</a>
-        <button>
-          Next Step
-        </button>
+        </div>
     </main>
     <!-- Step 2 end -->
 

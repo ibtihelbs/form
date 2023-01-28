@@ -103,19 +103,26 @@ li::before{
     flex-direction: column;
     gap: 1.5rem;
 }
+.main>*:nth-child(2){
+    background-color: pink;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
 form {
     display: flex;
     flex-direction: column;
     gap: .5rem;
 }
-form>div{
+#input, #input>div{
     display: flex;
     flex-direction: column;
     gap: .3rem;
 }
 button, form input{
     /*! padding: .3rem .8rem; */
-    border-radius: var(--border-red);
+    border-radius: 5px;
     height: 40px;
     border: none;
 }
@@ -142,3 +149,32 @@ button{
     text-align: center;
     width: 100%;
 }
+
+
+
+/**********************step2 *****step2*************/
+
+#plans{
+    display: flex;
+    justify-content: space-between;
+}
+#plans>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: var(--border-red);
+    border: 1px var(--Marine-blue) solid;
+    height: 30%;
+}
+#plans img{
+    width: 50px;
+}
+
+
+
+
+
+
+
+
+
