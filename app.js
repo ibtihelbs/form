@@ -155,7 +155,7 @@ let summary = {
     username : '',
     useremail : '',
     usernumber : '',
-    addOns: []
+    addOns: [{}]
 }
 //Selectors 
 const username = document.getElementById('name').value;
@@ -182,8 +182,8 @@ function addPlans(){
         plans.forEach((p)=>{
             p.addEventListener('click', (f)=>{
                 f.preventDefault();
-                console.log(f.target.querySelector('h3').innerHTML)
-                summary.plan = f.target.querySelector('h3').innerHTML;
+                console.log(f.target.querySelector('h3')?.innerHTML)
+                summary.plan = f.target.querySelector('h3')?.innerHTML;
                 
             })
        console.log(summary)
@@ -201,19 +201,22 @@ sidebarElements.forEach((v, i)=>{
         addPlans();
         const checkedEl = document.querySelectorAll('input[type="checkbox"]')
         const checkedBtn = document.getElementById('checked')
-        checkedBtn.addEventListener('click', (l)=>{
+        checkedBtn?.addEventListener('click', (l)=>{
             l.preventDefault();
             checkedEl.forEach((vl,i)=>{
                 console.log(vl.checked, vl.nextElementSibling.querySelector('span').innerHTML)
-                summary.addOns.push = {
+                summary.addOns[i] = i
+                /** {...addOns,
+                   {
                     type: vl.nextElementSibling.querySelector('h4').innerHTML,
                     price: vl.nextElementSibling.querySelector('span').innerHTML
-                }
+                   }
+                } */
             })
-            console.log(summary)
+           
         })
         
-        
+        console.log(summary)
         
     })
     
