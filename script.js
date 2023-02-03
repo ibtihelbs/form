@@ -163,7 +163,30 @@ const prevFn = ()=>{
        currentPage = currentPage - 1;
        mainSection.innerHTML= htmlContent[currentPage];
   })
-  
+}
+function thankYou(username, useremail, usernumber){
+  const tkMsg = `
+  <div class='center-thnx'>
+  <img src="./assets/images/icon-thank-you.svg" alt="thank-you" id="thanks">
+  <h1>
+    Thank you! <mark> ${username}</mark>
+  </h1>
+
+  <p>
+    Thanks for confirming your subscription!
+    using email address <mark> ${useremail}</mark>and phone number <mark>${usernumber}</mark>
+     We hope you have fun 
+using our platform. If you ever need support, please feel free 
+to email us at support@loremgaming.com.
+  </p>
+  </div>
+  `;
+  mainSection.setAttribute('id','thank-you')
+  const confirmBtn = document.getElementById('confirm');
+  confirmBtn.addEventListener('click', (e)=>{
+       e.preventDefault();
+       mainSection.innerHTML= tkMsg;
+  })
 }
 const summaryPage = (t)=>{
     const {username, useremail, usernumber, plan, addOns, total} = t
@@ -200,11 +223,12 @@ const summaryPage = (t)=>{
     </div>
     <div class="steps">
      <a href="#" class="previous">Go Back</a>
-     <button>Confirm</button>
+     <button id="confirm">Confirm</button>
     </div>
     </div>
     </section>`
     mainSection.innerHTML= html;
+    thankYou(username, useremail, usernumber)
 }
 const addOnsFn = ()=>{
    const addOnsBtn = document.querySelector('#addOns-form')
@@ -228,6 +252,7 @@ const addOnsFn = ()=>{
 }
 const nextPage = ()=>{
     let btnPlans = document.getElementById('plan-btn')
+    mainSection.setAttribute('id','add-ons')
     btnPlans.addEventListener('click', (e)=>{
         e.preventDefault();
         currentPage = currentPage + 1;

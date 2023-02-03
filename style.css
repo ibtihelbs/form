@@ -190,6 +190,18 @@ button{
     gap: 1rem;
 }
 
+/***************step 5**************/
+#thank-you{
+    justify-content: center;
+    align-items: center;
+}
+.center-thnx{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+}
 
 
 

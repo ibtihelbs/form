@@ -177,6 +177,8 @@ input.forEach((v,i)=>{
    
 }) 
 
+
+
 function addPlans(){
     const plans = document.querySelectorAll("#plans div") 
         plans.forEach((p)=>{
